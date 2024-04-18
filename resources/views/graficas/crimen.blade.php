@@ -8,8 +8,8 @@
     <div class="container">
         <div class="row">
             <div>
-                <div class="card bg-dark">
-                    <div class="card-header text-bg-dark text-center">
+                <div class="card bg-white">
+                    <div class="card-header text-bg-primary text-center">
                         <h4>Sección de Generación De Gráficos</h4>
                     </div>
                     <div class="card-body">
@@ -25,10 +25,10 @@
                         <div class="row mt-3">
                             <div>
                                 <div class="card">
-                                    <div class="card-header text-dark-primary text-center">
+                                    <div class="card-header text-bg-primary text-center">
                                         <h5>Parametros del Gráfico</h5>
                                     </div>
-                                    <div class="card-body bg-dark">
+                                    <div class="card-body bg-white">
                                         <h6 class="fw-bold">Personalizacion del Grafico</h6>
                                         <div class="form-check form-switch mb-3">
                                             <input class="form-check-input border-primary" role="switch" type="checkbox" name="" id="leyenda" checked>
@@ -38,26 +38,26 @@
                                         <div class="form-check">
                                             <div class="row">
                                                 <div class="form-check col">
-                                                    <input class="form-check-input casillas" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="top" checked>
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                    <input class="form-check-input border-primary casillas" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="top" checked>
+                                                    <label class="form-check-label fw-bold" for="flexRadioDefault1">
                                                       Arriba
                                                     </label>
                                                   </div>
                                                   <div class="form-check col">
-                                                    <input class="form-check-input casillas" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="bottom">
-                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                    <input class="form-check-input border-primary casillas" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="bottom">
+                                                    <label class="form-check-label fw-bold" for="flexRadioDefault2">
                                                       Abajo
                                                     </label>
                                                   </div>
                                                   <div class="form-check col">
-                                                    <input class="form-check-input casillas" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="right">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                    <input class="form-check-input border-primary casillas" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="right">
+                                                    <label class="form-check-label fw-bold" for="flexRadioDefault1">
                                                       Derecha
                                                     </label>
                                                   </div>
                                                   <div class="form-check col">
-                                                    <input class="form-check-input casillas" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="left">
-                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                    <input class="form-check-input border-primary casillas" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="left">
+                                                    <label class="form-check-label fw-bold" for="flexRadioDefault2">
                                                       Izquierda
                                                     </label>
                                                   </div>
@@ -81,12 +81,14 @@
                                             <option value="crimenMO">Crimenes por Modus Operandi</option>
                                             <option value="victimaE">Víctimas por Edades</option>
                                             <option value="victimaG">Víctimas por Género</option>
+                                            <option value="victimaL">Víctimas con Lesiones</option>
                                             <option value="delincuenteE">Delincuentes por Edades</option>
                                             <option value="delincuenteG">Delincuentes por Género</option>
                                             <option value="delincuenteA">Delincuentes con Antecedentes</option>
                                             <option value="crimenDG">Por crimen cantidad de delincuentes por género </option>
                                             <option value="crimenCDA">Por crimen cantidad de delincuentes antecedentes</option>
                                             <option value="crimenCRV">Por crimen cantidad de delincuentes con relación víctima</option>
+                                            <option value="victimaC">Cantidad Victimas por Crimen</option>
                                         </select>
     
                                         <div class="row text-center">

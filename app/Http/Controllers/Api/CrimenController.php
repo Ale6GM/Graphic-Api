@@ -3,11 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\CrimenResource;
 use App\Models\Crimen;
-use App\Models\Delincuente;
-use App\Services\CrimenServices;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class CrimenController extends Controller
@@ -75,5 +71,11 @@ class CrimenController extends Controller
         
 
         return response()->json($crimenesDelincuentes);
+    }
+
+    public function getCrimenesVictimas() {
+        $crimenVictima = Crimen::with('victimas')->get();
+
+    return response()->json($crimenVictima);
     }
 }

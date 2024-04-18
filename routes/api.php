@@ -22,11 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('ventas', [ClienteController::class, 'getData'])->name('ventas');
-
-Route::get('clientes', [ClienteController::class, 'getClientes'])->name('clientes');
-
-// Rutas para recoger los datos de las tablas individuales
+// Rutas a los diferentes endPoints para obtener los datos
 Route::get('years', [CrimenController::class, 'getCrimenesPorAno'])->name('years');
 Route::get('crimenes', [CrimenController::class, 'getCrimenes'])->name('crimenes');
 Route::get('modus', [CrimenController::class, 'getCrimenesPorModus'])->name('modus');
@@ -34,6 +30,7 @@ Route::get('modus', [CrimenController::class, 'getCrimenesPorModus'])->name('mod
 Route::get('victimas', [VictimaController::class, 'getVictimas'])->name('victimas');
 Route::get('delincuentes', [DelincuenteController::class, 'getDelincuentes'])->name('delincuentes');
 Route::get('crimendelin', [CrimenController::class, 'getCrimenesDelincuentes'])->name('crimendelin');
+Route::get('crimenvic', [CrimenController::class, 'getCrimenesVictimas'])->name('crimenvic');
 
 
 

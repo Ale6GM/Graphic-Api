@@ -36,6 +36,10 @@ fetch('http://127.0.0.1:8000/api/crimendelin')
 .then(response => response.json())
 .then(data => {crimenDelincuentes = data;});
 
+fetch('http://127.0.0.1:8000/api/crimenvic')
+.then(response => response.json())
+.then(data => {crimenVictimas = data;});
+
 /* Seccion de las funciones asociadas a los Crimenes */
 //Funcion que genera un grafico para la cantidad de crimenes por zona.
 function crimenesPorZona(crimenes, id) {
@@ -275,6 +279,48 @@ function victimasPorGenero(victimas, id) {
 		};
 
 		grafico = new Chart(id, {type:tipoGrafico.value, data, options})
+}
+
+// Funcion para la cantidad de victimas con lesiones graves o leves
+function victimasConLesiones(victimas, id) {
+	const checkboxes = document.getElementsByClassName('casillas');
+		let posicion = null;
+
+		Array.from(checkboxes).forEach(function(item) {
+			if (item.checked) {
+				posicion = item.value;
+			}
+		});
+		if(grafico) {
+			grafico.destroy();
+		}
+
+		// Obtenemos los tipos de lesiones
+		const lesionesUnicas = [... new Set(victimas.map(lesiones => lesiones.lesiones_danos))];
+		
+
+		const conteoLesiones = lesionesUnicas.map(lesiones => {
+			return victimas.filter(item => item.lesiones_danos === lesiones).length
+		})
+
+		const data = {
+			labels:lesionesUnicas,
+			datasets: [{
+				label: 'Cantidad de Victimas con Lesiones',
+				data:conteoLesiones,
+			}]
+		};
+		options= {
+			plugins: {
+				legend: {
+					display: leyenda.checked, // chequea si el check esta ativo para cambiar la propiedad display
+					position: posicion,
+				}
+			},
+		};
+		
+		grafico = new Chart(id, {type: tipoGrafico.value, data, options});
+
 }
 
 // Seccion para las funciones asociadas a los delincuentes
@@ -577,6 +623,48 @@ function delincuentesConRelacionConVictimaPorTipoDeCrimen(crimenDelincuentes, id
 
 }
 
+function victimasPorTipoCrimen(crimenVictimas, id) {
+	const checkboxes = document.getElementsByClassName('casillas');
+		let posicion = null;
+
+		Array.from(checkboxes).forEach(function(item) {
+			if (item.checked) {
+				posicion = item.value;
+			}
+		});
+		if(grafico) {
+			grafico.destroy();
+		}
+
+	const crimenesUnicos = [... new Set(crimenVictimas.map(crimen => crimen.tipo_crimen))];
+
+	const conteoVictimas = {};
+
+	// Recorremos los datos para calcular el conteo de víctimas por tipo de crimen
+	crimenVictimas.forEach(crimen => {
+		const tipoCrimen = crimen.tipo_crimen;
+		const cantidadVictimas = crimen.victimas.length;
+		
+		// Si el tipo de crimen ya existe en el objeto, sumamos la cantidad de víctimas
+		if (conteoVictimas[tipoCrimen]) {
+			conteoVictimas[tipoCrimen] += cantidadVictimas;
+		} else { // Si el tipo de crimen no existe en el objeto, lo inicializamos con la cantidad de víctimas
+			conteoVictimas[tipoCrimen] = cantidadVictimas;
+		}
+	});
+
+	const data = {
+		labels: crimenesUnicos,
+		datasets: [{
+			label: 'Cantidad de Victimas por Tipo de Crimen',
+			data: Object.values(conteoVictimas),
+		}]
+	}
+
+	grafico = new Chart(id, {type: tipoGrafico.value, data});
+
+}
+
 
 // Este Boton ejecuta las funciones generadoras del grafico en dependencia del valor del selector de graficos 
 botonGenerador.onclick = function() {
@@ -602,6 +690,10 @@ botonGenerador.onclick = function() {
 		delicuentesConAntecedentesPorTipoCrimen(crimenDelincuentes, 'grafico')
 	} else if(selectorDatos.value == 'crimenCRV') {
 		delincuentesConRelacionConVictimaPorTipoDeCrimen(crimenDelincuentes, 'grafico')
+	} else if(selectorDatos.value == 'victimaL') {
+		victimasConLesiones(victimas, 'grafico');
+	} else if(selectorDatos.value == 'victimaC') {
+		victimasPorTipoCrimen(crimenVictimas, 'grafico')
 	}
 }
 
