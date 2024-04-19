@@ -75,14 +75,21 @@ function crimenesPorZona(crimenes, id) {
 			type: tipoGrafico.value,
 			data: {
 				labels: labels,
-				datasets: datasets
+				datasets: datasets,
+				tension: .5,
+				fill: true,
+            	pointBorderWidth: 5
 			},
 			options: {
 				plugins: {
 					legend: {
 						display: leyenda.checked, // chequea si el check esta ativo para cambiar la propiedad display
 						position: posicion,
-					}
+					}, 
+					title: {
+						display: true,
+						text: 'Cantidad de Crimenes por Zona',
+					},			
 				},
 				scales: {
 					y: {
@@ -128,13 +135,20 @@ function crimenesPorAno(crimenYears, id) {
 		const data = {
 			labels: uniqueYears,
 			datasets: datasets,
+			tension: .5,
+			fill: true,
+            pointBorderWidth: 5
 		};
 		options= {
 			plugins: {
 				legend: {
 					display: leyenda.checked, // chequea si el check esta ativo para cambiar la propiedad display
 					position: posicion,
-				}
+				},
+				title: {
+					display: true,
+					text: 'Cantidad de Crimenes por Año',
+				},			
 			},
 		};
 		grafico = new Chart(id, {type: tipoGrafico.value, data, options});
@@ -186,13 +200,20 @@ function crimenesPorModus(modusOP, id) {
 			const data = {
 				labels: modusUnicos,
 				datasets: datasets,
+				tension: .5,
+				fill: true,
+            	pointBorderWidth: 5
 			};
 			options= {
 				plugins: {
 					legend: {
 						display: leyenda.checked, // chequea si el check esta ativo para cambiar la propiedad display
 						position: posicion,
-					}
+					},
+					title: {
+						display: true,
+						text: 'Cantidad de Crimenes por Modus Operandi',
+					},			
 				},
 			};
 			grafico = new Chart(id, {type: tipoGrafico.value, data, options});
@@ -225,8 +246,11 @@ function victimasPorEdad(victimas, id) {
     const data = {
         labels: edadesUnicas,
         datasets: [{
-            label: 'Cantidad de Victimas por Edad',
+            label: 'Edades',
             data: conteoEdades,
+			tension: .5,
+			fill: true,
+            pointBorderWidth: 5
         }]
     };
 	options= {
@@ -234,7 +258,11 @@ function victimasPorEdad(victimas, id) {
 			legend: {
 				display: leyenda.checked, // chequea si el check esta ativo para cambiar la propiedad display
 				position: posicion,
-			}
+			},
+			title: {
+                display: true,
+                text: 'Cantidad de Victimas por Edad',
+            },			
 		},
 	};
     grafico = new Chart(id, {type: tipoGrafico.value, data, options})
@@ -264,8 +292,11 @@ function victimasPorGenero(victimas, id) {
 		const data = {
 			labels: generos,
 			datasets: [{
-				label: 'Cantidad de Victimas por Genero',
+				label: 'Géneros',
 				data:conteoGeneros,
+				tension: .5,
+				fill: true,
+            	pointBorderWidth: 5
 			}]
 		};
 
@@ -274,7 +305,11 @@ function victimasPorGenero(victimas, id) {
 				legend: {
 					display: leyenda.checked, // chequea si el check esta ativo para cambiar la propiedad display
 					position: posicion,
-				}
+				}, 
+				title: {
+					display: true,
+					text: 'Cantidad de Victimas por Género',
+				},			
 			},
 		};
 
@@ -306,8 +341,11 @@ function victimasConLesiones(victimas, id) {
 		const data = {
 			labels:lesionesUnicas,
 			datasets: [{
-				label: 'Cantidad de Victimas con Lesiones',
+				label: 'Tipos Lesiones',
 				data:conteoLesiones,
+				tension: .5,
+				fill: true,
+            	pointBorderWidth: 5
 			}]
 		};
 		options= {
@@ -315,7 +353,11 @@ function victimasConLesiones(victimas, id) {
 				legend: {
 					display: leyenda.checked, // chequea si el check esta ativo para cambiar la propiedad display
 					position: posicion,
-				}
+				},
+				title: {
+					display: true,
+					text: 'Cantidad de Victimas por Cada Tipo de Lesión',
+				},			
 			},
 		};
 		
@@ -349,8 +391,11 @@ function delincuentesPorEdades(delincuentes, id) {
 		const data = {
 			labels: edadesUnicas,
 			datasets: [{
-				label: 'Cantidad de delincuentes por Edades',
+				label: 'Edades',
 				data: conteoEdades,
+				tension: .5,
+				fill: true,
+            	pointBorderWidth: 5
 			}]
 		};
 		options= {
@@ -358,7 +403,11 @@ function delincuentesPorEdades(delincuentes, id) {
 				legend: {
 					display: leyenda.checked, // chequea si el check esta ativo para cambiar la propiedad display
 					position: posicion,
-				}
+				},
+				title: {
+					display: true,
+					text: 'Cantidad de Delincuentes por Edades',
+				},			
 			},
 		};
 
@@ -390,8 +439,11 @@ function delincuentesPorGenero(delincuentes, id) {
 		const data = {
 			labels: generosUnicos,
 			datasets: [{
-				label: ['Cantidad de Delincuentes por Género'],
+				label: ['Géneros'],
 				data: conteoGeneros,
+				tension: .5,
+				fill: true,
+            	pointBorderWidth: 5
 			}]
 		};
 		options= {
@@ -399,7 +451,11 @@ function delincuentesPorGenero(delincuentes, id) {
 				legend: {
 					display: leyenda.checked, // chequea si el check esta ativo para cambiar la propiedad display
 					position: posicion,
-				}
+				}, 
+				title: {
+					display: true,
+					text: 'Cantidad de delincuentes por Género',
+				},			
 			},
 		};
 
@@ -432,8 +488,11 @@ function delincuentesPorAntecedentes(delincuentes, id) {
 		const data = {
 			labels: antecedentes,
 			datasets: [{
-				label: 'Cantidad de Delincuentes con Antecedentes',
+				label: 'Antecedentes',
 				data: conteoAntecedentes,
+				tension: .5,
+				fill: true,
+            	pointBorderWidth: 5
 			}]
 		};
 		options= {
@@ -441,7 +500,11 @@ function delincuentesPorAntecedentes(delincuentes, id) {
 				legend: {
 					display: leyenda.checked, // chequea si el check esta ativo para cambiar la propiedad display
 					position: posicion,
-				}
+				},
+				title: {
+					display: true,
+					text: 'Cantidad de Delincuentes con o sin Antecedentes',
+				},			
 			},
 		};
 
@@ -492,14 +555,21 @@ function delincuentesPorGeneroYCrimen(crimenDelincuentes, id) {
 			label: 'Femenino',
             data: crimenesUnicos.map(crimen => cantidadPorGeneroYCrimen[crimen].femeninos),
 
-		}]
+		}],
+		tension: .5,
+		fill: true,
+        pointBorderWidth: 5
 		},
 		options= {
 			plugins: {
 				legend: {
 					display: leyenda.checked, // chequea si el check esta ativo para cambiar la propiedad display
 					position: posicion,
-				}
+				},
+				title: {
+					display: true,
+					text: 'Cantidad de Delincuentes por Género por Cada Tipo de Crimen',
+				},			
 			},
 		};
 	grafico = new Chart(id, {type:tipoGrafico.value, data, options});
@@ -548,14 +618,21 @@ function delicuentesConAntecedentesPorTipoCrimen(crimenDelincuentes, id) {
 			label: 'Sin Antecdentes',
             data: crimenesUnicos.map(crimen => cantidadConAntecedentesPorCrimen[crimen].sin_antecedentes),
 
-		}]
+		}],
+		tension: .5,
+		fill: true,
+        pointBorderWidth: 5
 		},
 		options= {
 			plugins: {
 				legend: {
 					display: leyenda.checked, // chequea si el check esta ativo para cambiar la propiedad display
 					position: posicion,
-				}
+				},
+				title: {
+					display: true,
+					text: 'Cantidad de Delincuentes con o sin Antecedentes por Cada Tipo de Crímen',
+				},			
 			},
 		};
 
@@ -608,14 +685,21 @@ function delincuentesConRelacionConVictimaPorTipoDeCrimen(crimenDelincuentes, id
 			label: 'Sin Relación',
             data: crimenesUnicos.map(crimen => cantidadConRelacionPorCrimen[crimen].sin_relacion),
 
-		}]
+		}],
+		tension: .5,
+		fill: true,
+        pointBorderWidth: 5
 		},
 		options= {
 			plugins: {
 				legend: {
 					display: leyenda.checked, // chequea si el check esta ativo para cambiar la propiedad display
 					position: posicion,
-				}
+				},
+				title: {
+					display: true,
+					text: 'Cantidad de Delincuentes con relación con la víctima por Cada Tipo de Crímen',
+				},			
 			},
 		};
 	grafico = new Chart(id, {type:tipoGrafico.value, data, options});
@@ -656,12 +740,27 @@ function victimasPorTipoCrimen(crimenVictimas, id) {
 	const data = {
 		labels: crimenesUnicos,
 		datasets: [{
-			label: 'Cantidad de Victimas por Tipo de Crimen',
+			label: 'Cantidad de Victimas',
 			data: Object.values(conteoVictimas),
+			tension: .5,
+			fill: true,
+            pointBorderWidth: 5
 		}]
-	}
+	};
+	options= {
+		plugins: {
+			legend: {
+				display: leyenda.checked, // chequea si el check esta ativo para cambiar la propiedad display
+				position: posicion,
+			},
+			title: {
+                display: true,
+                text: 'Cantidad de Victimas por Cada Tipo de Crimen',
+            },			
+		},
+	};
 
-	grafico = new Chart(id, {type: tipoGrafico.value, data});
+	grafico = new Chart(id, {type: tipoGrafico.value, data, options});
 
 }
 
@@ -739,8 +838,8 @@ let opt = {
 	filename:     'Grafico.pdf',
 	image:        { type: 'jpg', quality: 1 },
 	html2canvas:  { scale: 2 },
-	jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-  };
+	jsPDF:        { unit: 'in', format: 'A3', orientation: 'landscape' }
+  }; 
 
 // para guardar el grafico en los dos formatos
 botonGuardar.onclick = function() {
@@ -752,12 +851,12 @@ botonGuardar.onclick = function() {
 		})
 	}
 	if(radioPDF.checked) {
-		const canvas = document.getElementById('grafico');
+		let canvas = document.getElementById('grafico');
 		
-		if (grafico == null) {
+		if (grafico==null) {
 			Swal.fire({
 				title: "Error",
-				text: "Aun no se ha Generado un Grafico",
+				text: "Aun no hay un Grafico Generado",
 				icon: "error"
 			})
 		} else {
@@ -783,6 +882,8 @@ botonGuardar.onclick = function() {
 		}
 	}
 }
+
+
 
 
 

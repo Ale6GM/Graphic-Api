@@ -10,7 +10,7 @@
             <div>
                 <div class="card bg-white">
                     <div class="card-header text-bg-primary text-center">
-                        <h4>Sección de Generación De Gráficos</h4>
+                        <h4><i class="bi bi-clipboard-data"></i> Sección de Generación De Gráficos</h4>
                     </div>
                     <div class="card-body">
                         <div class="row">                        
@@ -26,10 +26,10 @@
                             <div>
                                 <div class="card">
                                     <div class="card-header text-bg-primary text-center">
-                                        <h5>Parametros del Gráfico</h5>
+                                        <h5><i class="bi bi-pencil-square"></i> Parámetros del Gráfico</h5>
                                     </div>
                                     <div class="card-body bg-white">
-                                        <h6 class="fw-bold">Personalizacion del Grafico</h6>
+                                        <h6 class="fw-bold">Personalización del Gráfico</h6>
                                         <div class="form-check form-switch mb-3">
                                             <input class="form-check-input border-primary" role="switch" type="checkbox" name="" id="leyenda" checked>
                                             <label class="fw-bold" for="">Leyenda</label>
@@ -40,25 +40,25 @@
                                                 <div class="form-check col">
                                                     <input class="form-check-input border-primary casillas" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="top" checked>
                                                     <label class="form-check-label fw-bold" for="flexRadioDefault1">
-                                                      Arriba
+                                                        <i class="bi bi-arrow-up-circle"></i> Arriba
                                                     </label>
                                                   </div>
                                                   <div class="form-check col">
                                                     <input class="form-check-input border-primary casillas" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="bottom">
                                                     <label class="form-check-label fw-bold" for="flexRadioDefault2">
-                                                      Abajo
+                                                        <i class="bi bi-arrow-down-circle"></i> Abajo
                                                     </label>
                                                   </div>
                                                   <div class="form-check col">
                                                     <input class="form-check-input border-primary casillas" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="right">
                                                     <label class="form-check-label fw-bold" for="flexRadioDefault1">
-                                                      Derecha
+                                                        <i class="bi bi-arrow-right-circle"></i> Derecha
                                                     </label>
                                                   </div>
                                                   <div class="form-check col">
                                                     <input class="form-check-input border-primary casillas" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="left">
                                                     <label class="form-check-label fw-bold" for="flexRadioDefault2">
-                                                      Izquierda
+                                                        <i class="bi bi-arrow-left-circle"></i> Izquierda
                                                     </label>
                                                   </div>
                                             </div>
@@ -93,10 +93,10 @@
     
                                         <div class="row text-center">
                                             <div class="col">
-                                                <button class="btn btn-primary btn-sm mb-2" id="btngenerador">Generar Gráfico</button>
+                                                <button class="btn btn-primary mb-2" id="btngenerador"><i class="bi bi-play-circle-fill"></i> Generar Gráfico</button>
                                             </div>
                                             <div class="col">
-                                                <button class="btn btn-danger btn-sm mb-2" id="btnEliminar">Eliminar Gráfico</button>
+                                                <button class="btn btn-danger mb-2" id="btnEliminar"><i class="bi bi-trash"></i> Eliminar Gráfico</button>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -117,7 +117,7 @@
                                                     </label>
                                             </div>
                                             <div class="col"></div>
-                                            <button id="btnGuardar" class="btn btn-primary btn-sm mt-3">Guardar Gráfico</button>
+                                            <button id="btnGuardar" class="btn btn-primary mt-3"><i class="bi bi-floppy-fill"></i> Guardar Gráfico</button>
                                         </div>
     
                                         

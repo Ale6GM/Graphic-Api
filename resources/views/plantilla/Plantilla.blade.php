@@ -11,7 +11,8 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="{{asset('assets/css/estilos.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/sweetalert2.css')}}">
-        <link rel="stylesheet" href="{{asset('assets/css/bootstrap-icons.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/bootstrap-icons.min.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/fonts/bootstrap-icons.woff')}}">
         @vite(['resources/scss/app.scss', 'resources/js/app.js'])
         <!-- Styles -->
         <style>

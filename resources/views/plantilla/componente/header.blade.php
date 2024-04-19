@@ -6,8 +6,8 @@
       </a>
 
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="{{route('Inicio')}}" class="nav-link {{request()->routeIs('Inicio') ? 'active' : ''}}"" aria-current="page">Inicio</a></li>
-        <li class="nav-item"><a href="{{route('Crimen')}}" class="nav-link {{request()->routeIs('Crimen') ? 'active' : ''}}"">Módulo Graficador</a></li>
+        <li class="nav-item"><a href="{{route('Inicio')}}" class="nav-link {{request()->routeIs('Inicio') ? 'active' : ''}}"" aria-current="page"><i class="bi bi-house-door-fill"></i> Inicio</a></li>
+        <li class="nav-item"><a href="{{route('Crimen')}}" class="nav-link {{request()->routeIs('Crimen') ? 'active' : ''}}""><i class="bi bi-pie-chart-fill"></i> Módulo Graficador</a></li>
       </ul>
     </header>
   </div>
