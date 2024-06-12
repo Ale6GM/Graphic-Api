@@ -443,7 +443,7 @@ function delincuentesPorGenero(delincuentes, id) {
 				data: conteoGeneros,
 				tension: .5,
 				fill: true,
-            	pointBorderWidth: 5
+            	pointBorderWidth: 9
 			}]
 		};
 		options= {

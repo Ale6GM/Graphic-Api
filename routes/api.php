@@ -33,4 +33,3 @@ Route::get('crimendelin', [CrimenController::class, 'getCrimenesDelincuentes'])-
 Route::get('crimenvic', [CrimenController::class, 'getCrimenesVictimas'])->name('crimenvic');
 
 
-

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class CrimenController extends Controller
 {
+    // esta funcion obtiene los crimenes por la zona
     public function getCrimenes() {
     $consulta = DB::table('crimens')
         ->select('zona')
@@ -27,7 +28,7 @@ class CrimenController extends Controller
 
         return response()->json($resultado);
     }
-  
+  // obtiene la cantidad de crimenes por año
     public function getCrimenesPorAno() {
         $resultados = DB::table('crimens')
     ->select(DB::raw('EXTRACT(YEAR FROM fecha_ocurrida) as año'), 'tipo_crimen', DB::raw('COUNT(*) as cantidad'))
@@ -36,7 +37,7 @@ class CrimenController extends Controller
 
     return response()->json($resultados);
     }
-    
+    // obtiene la cantidad de crimenes por modus operandi
     public function getCrimenesPorModus() {
         $resultados = DB::table('crimens')
             ->select('modus_operandi', 'tipo_crimen', DB::raw('COUNT(*) as cantidad'))
@@ -45,7 +46,7 @@ class CrimenController extends Controller
 
         return response()->json($resultados);
     }
-
+// obtiene la cantidad de crimenes por delincuente
     public function getCrimenesDelincuentes() {      
 
             $crimenesDelincuentes = Crimen::withCount([
@@ -72,10 +73,15 @@ class CrimenController extends Controller
 
         return response()->json($crimenesDelincuentes);
     }
-
+    // obtiene todas las victimas por crimen
     public function getCrimenesVictimas() {
         $crimenVictima = Crimen::with('victimas')->get();
 
     return response()->json($crimenVictima);
     }
+
+
+
+
+    
 }
